@@ -104,14 +104,17 @@ JobNest utilizes Kafka for asynchronous communication to ensure decoupled and re
 To get started with JobNest, follow these steps:
 
 **1. Clone the repository:**
-
 git clone https://github.com/mksharma9560/jobnest-backend-microservices.git
+
 cd jobnest
 
 **2. Build and Run:**
 Use Maven or Gradle to build the project. Ensure Docker and Kafka are running for full functionality.
 
-**3. mvn clean install**
+mvn clean install
+
+docker-compose build
+
 docker-compose up
 
 **Configuration:**

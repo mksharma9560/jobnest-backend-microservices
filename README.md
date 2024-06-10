@@ -127,5 +127,11 @@ Start the Eureka Server to enable service registration and discovery.
 **Distributed Tracing:**
 Ensure Zipkin is set up and running to enable distributed tracing.
 
+**Authors**
+* **Mohit Kumar Sharma**
+
 ## Contribution
 Contributions are welcome! Please fork the repository and submit pull requests for any enhancements, bug fixes, or new features. Ensure code adheres to Java Code Conventions and is well-documented.
+
+## License
+This project is licensed under the MIT License - see the LICENSE file for details.

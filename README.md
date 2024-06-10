@@ -79,28 +79,29 @@ The API Gateway Service is the entry point for all client requests. It performs 
 * **Description:** Provides distributed tracing capabilities.
 * **Functionality:** Helps trace requests across microservices to monitor and troubleshoot performance issues.
 
-### Databases
+## Databases
 * **PostgreSQL:** Used as the primary database for data persistence across all microservices.
 
 ### Asynchronous Communication
 JobNest utilizes Kafka for asynchronous communication to ensure decoupled and resilient interactions between services. This is particularly useful for event-driven scenarios such as sending notifications and handling reviews:
 
-Notification Service listens for events from Job Application Service and Users Service.
-Reviews Service listens for events from the Company Service.
+1. Notification Service listens for events from Job Application Service and Users Service.
+2. Reviews Service listens for events from the Company Service.
 
-Technology Stack
-Java Spring Boot: For developing microservices.
-Spring Cloud Netflix: For service discovery (Eureka) and circuit breaker patterns.
-Spring Cloud Config: For centralized configuration management.
-Spring Cloud Gateway: For API Gateway.
-Feign Client: For declarative REST client interactions between microservices.
-Kafka: For asynchronous communication.
-Docker: For containerization of services.
-Kubernetes: For orchestration and management of containers (optional, for deployment).
-Getting Started
+## Technology Stack
+* Java Spring Boot: For developing microservices.
+* Spring Cloud Netflix: For service discovery (Eureka) and circuit breaker patterns.
+* Spring Cloud Config: For centralized configuration management.
+* Spring Cloud Gateway: For API Gateway.
+* Feign Client: For declarative REST client interactions between microservices.
+* Kafka: For asynchronous communication.
+* Docker: For containerization of services.
+* Kubernetes: For orchestration and management of containers (optional, for deployment).
+
+#### Getting Started
 To get started with JobNest, follow these steps:
 
-Clone the repository:
+**Clone the repository:**
 
 sh
 Copy code

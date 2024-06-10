@@ -134,5 +134,5 @@ Ensure Zipkin is set up and running to enable distributed tracing.
 Contributions are welcome! Please fork the repository and submit pull requests for any enhancements, bug fixes, or new features. Ensure code adheres to Java Code Conventions and is well-documented.
 
 ## License
-This project is licensed under the MIT License - see the [LICENSE](https://example.com)
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/mksharma9560/jobnest-backend-microservices/blob/master/License.txt)
 file for details.

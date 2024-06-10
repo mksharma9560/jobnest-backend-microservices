@@ -25,51 +25,66 @@ The API Gateway Service is the entry point for all client requests. It performs 
   1. Company Service
   2. Search Service
 * **Communication:** Uses Feign clients for synchronous communication with dependent services.
+
 **3. Job Application Service**
 
-Description: Manages job applications and interactions between users and job postings.
-Dependencies:
-Job Service
-Users Service
-Communication: Uses Feign clients for synchronous communication with dependent services.
-Search Service
+* **Description:** Manages job applications and interactions between users and job postings.
+* **Dependencies:**
+  1. Job Service
+  2. Users Service
+  3. Notification Service
+8 **Communication:** Uses Feign clients for synchronous communication with dependent services.
 
-Description: Provides search capabilities for job listings and companies.
-Dependencies:
-Company Service
-Job Service
-Communication: Uses Feign clients for synchronous communication with dependent services.
-Notification Service
+**4. Search Service**
 
-Description: Sends notifications to users based on job application events and other triggers.
-Dependencies:
-Job Application Service
-Users Service
-Communication: Uses Kafka for asynchronous communication with dependent services.
-Reviews Service
+* **Description:** Provides search capabilities for job listings and companies.
+* **Dependencies:**
+  1. Company Service
+  2. Job Service
+* **Communication:** Uses Feign clients for synchronous communication with dependent services.
 
-Description: Manages company reviews and ratings.
-Dependencies:
-Company Service
-Communication: Uses Kafka for asynchronous communication with dependent services.
-Supporting Services
-Authentication Service
+**5. Notification Service**
 
-Description: Handles user authentication and authorization.
-Functionality: Validates user credentials and provides tokens for secure access.
-Config Server
+* **Description:** Sends notifications to users based on job application events and other triggers.
+* **Dependencies:**
+  1. Job Application Service
+  2. Users Service
+* **Communication:** Uses Kafka for asynchronous communication with dependent services.
 
-Description: Centralized configuration management for all microservices.
-Functionality: Provides dynamic configuration properties to microservices at runtime.
-Eureka Registry/Discovery Service
+**6. Reviews Service**
 
-Description: Service discovery and registration.
-Functionality: Allows microservices to register themselves and discover other services dynamically.
-Asynchronous Communication
+* **Description:** Manages company reviews and ratings.
+* **Dependencies:**
+  1. Company Service
+* **Communication:** Uses Kafka for asynchronous communication with dependent services.
+
+## Supporting Services
+
+**7. Authentication Service**
+
+* **Description:** Handles user authentication and authorization.
+* **Functionality:** Uses JWT for secure token-based authentication and authorization..
+
+**8. Config Server**
+
+* **Description:** Centralized configuration management for all microservices.
+* **Functionality:** Provides dynamic configuration properties to microservices at runtime from **Github.**
+
+**9. Eureka Registry/Discovery Service**
+
+* **Description:** Service discovery and registration.
+* **Functionality:** Allows microservices to register themselves and discover other services dynamically.
+
+**10. Zipkin**
+* **Description:** Provides distributed tracing capabilities.
+* **Functionality:** Helps trace requests across microservices to monitor and troubleshoot performance issues.**
+
+### Asynchronous Communication
 JobNest utilizes Kafka for asynchronous communication to ensure decoupled and resilient interactions between services. This is particularly useful for event-driven scenarios such as sending notifications and handling reviews:
 
 Notification Service listens for events from Job Application Service and Users Service.
 Reviews Service listens for events from the Company Service.
+
 Technology Stack
 Java Spring Boot: For developing microservices.
 Spring Cloud Netflix: For service discovery (Eureka) and circuit breaker patterns.

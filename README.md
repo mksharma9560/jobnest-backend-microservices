@@ -95,30 +95,33 @@ JobNest utilizes Kafka for asynchronous communication to ensure decoupled and re
 * Spring Cloud Gateway: For API Gateway.
 * Feign Client: For declarative REST client interactions between microservices.
 * Kafka: For asynchronous communication.
+* Zipkin: For distributed tracing.
+* PostgreSQL: For data persistence.
+* JWT: For secure token-based authentication and authorization.
 * Docker: For containerization of services.
-* Kubernetes: For orchestration and management of containers (optional, for deployment).
 
 #### Getting Started
 To get started with JobNest, follow these steps:
 
-**Clone the repository:**
+**1. Clone the repository:**
 
-sh
-Copy code
-git clone https://github.com/yourusername/jobnest.git
+git clone https://github.com/mksharma9560/jobnest-backend-microservices.git
 cd jobnest
-Build and Run:
+
+**2. Build and Run:**
 Use Maven or Gradle to build the project. Ensure Docker and Kafka are running for full functionality.
 
-sh
-Copy code
-mvn clean install
+**3. mvn clean install**
 docker-compose up
-Configuration:
-Ensure the Config Server is set up with the correct configuration properties for each service. Update application.yml files as needed.
 
-Service Discovery:
+**Configuration:**
+Ensure the Config Server is set up with the correct configuration properties for each service. Update application.properties files as needed.
+
+**Service Discovery:**
 Start the Eureka Server to enable service registration and discovery.
 
-Contribution
+**Distributed Tracing:**
+Ensure Zipkin is set up and running to enable distributed tracing.
+
+## Contribution
 Contributions are welcome! Please fork the repository and submit pull requests for any enhancements, bug fixes, or new features. Ensure code adheres to Java Code Conventions and is well-documented.

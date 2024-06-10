@@ -127,7 +127,7 @@ Start the Eureka Server to enable service registration and discovery.
 **5. Distributed Tracing:**
 Ensure Zipkin is set up and running to enable distributed tracing.
 
-**Authors**
+## Authors
 * **Mohit Kumar Sharma**
 
 ## Contribution

@@ -100,7 +100,7 @@ JobNest utilizes Kafka for asynchronous communication to ensure decoupled and re
 * **JWT:** For secure token-based authentication and authorization.
 * **Docker:** For containerization of services.
 
-### Getting Started
+## Getting Started
 To get started with JobNest, follow these steps:
 
 **1. Clone the repository:**

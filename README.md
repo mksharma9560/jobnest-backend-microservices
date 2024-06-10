@@ -1,4 +1,4 @@
-# JobNest - Where Dreams Find The Match
+# JobNest - Where Dreams Find Their Match
 ## Overview
 **JobNest is a comprehensive microservice-based application designed to streamline and enhance the job search and application process. The architecture follows best practices for microservices, ensuring scalability, flexibility, and maintainability. Key components of the system include an API Gateway for request routing, multiple specialized services for handling distinct aspects of the application, and asynchronous communication facilitated by Kafka. The system also includes distributed tracing with Zipkin, configuration management with GitHub, and robust security with JWT for authorization. PostgreSQL is used as the primary database for data persistence.**
 

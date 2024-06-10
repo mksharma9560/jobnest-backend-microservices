@@ -56,14 +56,14 @@ The API Gateway Service is the entry point for all client requests. It performs 
 * **Description:** Manages company reviews and ratings.
 * **Dependencies:**
   1. Company Service
-* **Communication:** Uses Kafka for asynchronous communication with dependent services.
-
-## Supporting Services
+* **Communication:** Uses Kafka for asynchronous communication with dependent services once the rating for a company's average rating get updated.
 
 **7. Authentication Service**
 
 * **Description:** Handles user authentication and authorization.
 * **Functionality:** Uses JWT for secure token-based authentication and authorization..
+
+## Supporting Services
 
 **8. Config Server**
 
@@ -77,7 +77,10 @@ The API Gateway Service is the entry point for all client requests. It performs 
 
 **10. Zipkin**
 * **Description:** Provides distributed tracing capabilities.
-* **Functionality:** Helps trace requests across microservices to monitor and troubleshoot performance issues.**
+* **Functionality:** Helps trace requests across microservices to monitor and troubleshoot performance issues.
+
+### Databases
+* **PostgreSQL:** Used as the primary database for data persistence across all microservices.
 
 ### Asynchronous Communication
 JobNest utilizes Kafka for asynchronous communication to ensure decoupled and resilient interactions between services. This is particularly useful for event-driven scenarios such as sending notifications and handling reviews:

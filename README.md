@@ -118,13 +118,13 @@ docker-compose build
 
 docker-compose up
 
-**Configuration:**
+**3. Configuration:**
 Ensure the Config Server is set up with the correct configuration properties for each service. Update application.properties files as needed.
 
-**Service Discovery:**
+**4. Service Discovery:**
 Start the Eureka Server to enable service registration and discovery.
 
-**Distributed Tracing:**
+**5. Distributed Tracing:**
 Ensure Zipkin is set up and running to enable distributed tracing.
 
 **Authors**

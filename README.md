@@ -4,7 +4,6 @@
 
 ## Architecture
 ### Diagram
-
 ![Project Architecture](https://github.com/mksharma9560/jobnest-backend-microservices/blob/master/JobNest-Architecture.drawio)
 
 ### API Gateway Service

@@ -89,8 +89,8 @@ JobNest utilizes Kafka for asynchronous communication to ensure decoupled and re
 2. Reviews Service listens for events from the Company Service.
 
 ## Technology Stack
-* Java Spring Boot: For developing microservices.
-* Spring Cloud Netflix: For service discovery (Eureka) and circuit breaker patterns.
+* Java Spring Boot v2.6.6: For developing microservices.
+* Spring Cloud Netflix v2021.0.2: For service discovery (Eureka) and circuit breaker patterns.
 * Spring Cloud Config: For centralized configuration management.
 * Spring Cloud Gateway: For API Gateway.
 * Feign Client: For declarative REST client interactions between microservices.

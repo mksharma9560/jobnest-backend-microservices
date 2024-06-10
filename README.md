@@ -1,31 +1,31 @@
-# jobnest-backend-microservices
-JobNest
-Overview
-JobNest is a comprehensive microservice-based application designed to streamline and enhance the job search and application process. The architecture follows best practices for microservices, ensuring scalability, flexibility, and maintainability. Key components of the system include an API Gateway for request routing, multiple specialized services for handling distinct aspects of the application, and asynchronous communication facilitated by Kafka. The system also includes configuration and service discovery features to manage and coordinate the microservices efficiently.
+# JobNest - Where Dreams Find The Match
+## Overview
+**JobNest is a comprehensive microservice-based application designed to streamline and enhance the job search and application process. The architecture follows best practices for microservices, ensuring scalability, flexibility, and maintainability. Key components of the system include an API Gateway for request routing, multiple specialized services for handling distinct aspects of the application, and asynchronous communication facilitated by Kafka. The system also includes distributed tracing with Zipkin, configuration management with GitHub, and robust security with JWT for authorization. PostgreSQL is used as the primary database for data persistence.**
 
-Architecture
-API Gateway Service
+## Architecture
+### API Gateway Service
 The API Gateway Service is the entry point for all client requests. It performs the following functions:
 
-Authentication and Authorization: Ensures that requests are authenticated and authorized via the Authentication Service.
-Request Routing: Routes authenticated requests to the appropriate microservices.
-Microservices
-Company Service
+* Authentication and Authorization: Ensures that requests are authenticated and authorized via the Authentication Service.
+* Request Routing: Routes authenticated requests to the appropriate microservices.
 
-Description: Manages company-related data and operations.
-Dependencies:
-Job Service
-Reviews Service
-Search Service
-Communication: Uses Feign clients for synchronous communication with dependent services.
-Job Service
+## Microservices
+**1. Company Service**
 
-Description: Handles job postings, job details, and related operations.
-Dependencies:
-Company Service
-Search Service
-Communication: Uses Feign clients for synchronous communication with dependent services.
-Job Application Service
+* **Description:** Manages company-related data and operations.
+* **Dependencies:**
+  1. Job Service
+  2. Reviews Service
+* **Communication:** Uses Feign clients for synchronous communication with dependent services.
+
+**2. Job Service**
+
+* **Description:** Handles job postings, job details, and related operations.
+* **Dependencies:**
+  1. Company Service
+  2. Search Service
+* **Communication:** Uses Feign clients for synchronous communication with dependent services.
+**3. Job Application Service**
 
 Description: Manages job applications and interactions between users and job postings.
 Dependencies:

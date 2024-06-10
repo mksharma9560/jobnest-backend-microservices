@@ -4,7 +4,7 @@
 
 ## Architecture
 ### Diagram
-![Project Architecture](https://github.com/mksharma9560/jobnest-backend-microservices/blob/master/JobNest-Architecture.drawio)
+![Project Architecture](https://github.com/mksharma9560/jobnest-backend-microservices/blob/master/JobNest-Architecture.jpg)
 
 ### API Gateway Service
 The API Gateway Service is the entry point for all client requests. It performs the following functions:

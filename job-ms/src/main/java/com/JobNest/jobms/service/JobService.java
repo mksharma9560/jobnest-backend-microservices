@@ -12,6 +12,8 @@ public interface JobService {
 
     JobDto createJob(Job job);
 
+    Integer addJobs(List<Job> jobs);
+
     List<JobDto> getJobs();
 
     boolean updateJobById(Long id, Job newJob);

@@ -154,7 +154,8 @@ public class CompanyController {
 
         success = !companyDtos.isEmpty();
         message = success ? "Companies fetched successfully" : "No companies match the given criteria";
-        httpStatus = success ? HttpStatus.OK : HttpStatus.NOT_FOUND;
+        HttpStatus httpStatus = HttpStatus.OK;
+//        httpStatus = success ? HttpStatus.OK : HttpStatus.NOT_FOUND;
 
         ApiResponse<List<CompanyDto>> response = responseBuilder.buildResponseWithData(companyDtos, success, message, httpStatus);
         return new ResponseEntity<>(response, httpStatus);
@@ -176,7 +177,8 @@ public class CompanyController {
 
         success = !companyDtos.isEmpty();
         message = success ? "Companies fetched successfully" : "No companies match the given keyword";
-        httpStatus = success ? HttpStatus.OK : HttpStatus.NOT_FOUND;
+        HttpStatus httpStatus = HttpStatus.OK;
+//        httpStatus = success ? HttpStatus.OK : HttpStatus.NOT_FOUND;
 
         ApiResponse<List<CompanyDto>> response = responseBuilder.buildResponseWithData(companyDtos, success, message, httpStatus);
         return new ResponseEntity<>(response, httpStatus);

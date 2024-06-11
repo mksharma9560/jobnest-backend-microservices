@@ -56,6 +56,26 @@ public class JobController {
     }
 
     /**
+     * Creates a list of new jobs.
+     *
+     * @param jobs The job data to be created.
+     * @return A response entity with the inserted record count and HTTP status 201 if successful.
+     * @throws Exception If an error occurs, which will be handled by GlobalExceptionHandler class.
+     */
+    @PostMapping("/saveJobs")
+    public ResponseEntity<ApiResponse<Integer>> createJobs(@Valid @RequestBody List<Job> jobs) {
+        log.info("Received POST request to add list of job");
+        Integer recordsInserted = jobService.addJobs(jobs);
+
+        success = recordsInserted != 0;
+        message = "Jobs saved successfully";
+        httpStatus = HttpStatus.CREATED;
+
+        ApiResponse<Integer> response = responseBuilder.buildResponseWithListOfData(recordsInserted, success, message, httpStatus);
+        return new ResponseEntity<>(response, HttpStatus.CREATED);
+    }
+
+    /**
      * Updates an existing job by its ID.
      *
      * @param jobId  The ID of the job to be updated.
@@ -194,9 +214,10 @@ public class JobController {
 
         success = !jobDtos.isEmpty();
         message = success ? "Jobs fetched successfully" : "No jobs match the given criteria";
-        httpStatus = success ? HttpStatus.OK : HttpStatus.NOT_FOUND;
+        HttpStatus httpStatus = HttpStatus.OK;
+//        httpStatus = success ? HttpStatus.OK : HttpStatus.NOT_FOUND;
 
-        ApiResponse<List<JobDto>> response = responseBuilder.buildResponseWithData(jobDtos, success, message, httpStatus);
+        ApiResponse<List<JobDto>> response = responseBuilder.buildResponseWithData(jobDtos,success, message, httpStatus);
         return new ResponseEntity<>(response, httpStatus);
     }
 
@@ -215,7 +236,8 @@ public class JobController {
 
         success = !jobDtos.isEmpty();
         message = success ? "Jobs fetched successfully" : "No jobs match the given keyword";
-        httpStatus = success ? HttpStatus.OK : HttpStatus.NOT_FOUND;
+        HttpStatus httpStatus = HttpStatus.OK;
+//        httpStatus = success ? HttpStatus.OK : HttpStatus.NOT_FOUND;
 
         ApiResponse<List<JobDto>> response = responseBuilder.buildResponseWithData(jobDtos, success, message, httpStatus);
         return new ResponseEntity<>(response, httpStatus);

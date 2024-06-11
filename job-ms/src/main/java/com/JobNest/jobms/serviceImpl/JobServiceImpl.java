@@ -50,6 +50,20 @@ public class JobServiceImpl implements JobService {
         return dtoMapper.mapToDtoWithUrl(savedJob, companyUrl);
     }
 
+    @Override
+    @Transactional
+    public Integer addJobs(List<Job> jobs){
+        log.info("Executing addJobs()");
+
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        String date = dateFormat.format(new Date());
+        for(Job job : jobs){
+            job.setPostedAt(date);
+        }
+        List<Job> savedJobs = jobRepo.saveAll(jobs);
+        return (Integer)savedJobs.size();
+    }
+
     @Transactional
     @Override
     public boolean updateJobById(Long id, Job newJob) {

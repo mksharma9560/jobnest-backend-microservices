@@ -42,10 +42,11 @@ public class SearchServiceImpl implements SearchService {
         ResponseEntity<ApiResponse<List<JobDto>>> responseEntity = jobClient.searchJobs(searchCriteria);
         List<JobDto> jobDtos = new ArrayList<>();
 
-        if (responseEntity.getStatusCode() == HttpStatus.OK) {
+        if(responseEntity.getBody().getData().size()>0){
             jobDtos = responseEntity.getBody().getData();
+            log.info("Jobs fetched successfully");
         }
-        log.info("Jobs fetched successfully");
+        log.info("No jobs match the given criteria");
         return jobDtos;
     }
 
@@ -72,6 +73,11 @@ public class SearchServiceImpl implements SearchService {
         if (responseEntity.getStatusCode() == HttpStatus.OK) {
             companyDtos = responseEntity.getBody().getData();
         }
+        if(responseEntity.getBody().getData().size()>0){
+            companyDtos = responseEntity.getBody().getData();
+            log.info("Companies data fetched successfully");
+        }
+        log.info("No company match the given criteria");
         return companyDtos;
     }
 
@@ -95,9 +101,11 @@ public class SearchServiceImpl implements SearchService {
         ResponseEntity<ApiResponse<List<JobDto>>> responseEntity = jobClient.searchJobByKeyword(keywordLC);
         List<JobDto> jobDtos = new ArrayList<>();
 
-        if (responseEntity.getStatusCode() == HttpStatus.OK) {
+        if(responseEntity.getBody().getData().size()>0){
             jobDtos = responseEntity.getBody().getData();
+            log.info("Jobs fetched successfully");
         }
+        log.info("No jobs match the given keywords");
         return jobDtos;
     }
 
@@ -122,9 +130,11 @@ public class SearchServiceImpl implements SearchService {
         ResponseEntity<ApiResponse<List<CompanyDto>>> responseEntity = companyClient.searchJobsByKeyword(keywordLC);
         List<CompanyDto> companyDtos = new ArrayList<>();
 
-        if (responseEntity.getStatusCode() == HttpStatus.OK && responseEntity.getBody() != null) {
+        if(responseEntity.getBody().getData().size()>0){
             companyDtos = responseEntity.getBody().getData();
+            log.info("Companies fetched successfully");
         }
+        log.info("No companies match the given keyword");
         return companyDtos;
     }
 

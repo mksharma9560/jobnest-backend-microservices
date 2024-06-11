@@ -57,6 +57,26 @@ public class RouteConfig {
                         .filters(f -> f.filter(authHeaderFilter.apply(new AuthHeaderFilter.Config())))
                         .uri("lb://reviews-service"))
 
+                // Search-Service
+                .route("Search-Service", predicateSpec -> predicateSpec
+                        .path("/api/search/**")
+                        .and().method(HttpMethod.GET)
+                        .uri("lb://company-service"))
+                .route("Company-Service", predicateSpec -> predicateSpec
+                        .path("/api/companies/**").and().header("Authorization")
+                        .filters(f -> f.filter(authHeaderFilter.apply(new AuthHeaderFilter.Config())))
+                        .uri("lb://company-service"))
+
+                // JobApplication-Service
+                .route("JobApplication-Service", predicateSpec -> predicateSpec
+                        .path("/api/applyjobs/**")
+                        .and().method(HttpMethod.POST)
+                        .uri("lb://jobapplication-service"))
+                .route("JobApplication-Service", predicateSpec -> predicateSpec
+                        .path("/api/applyjobs/**").and().header("Authorization")
+                        .filters(f -> f.filter(authHeaderFilter.apply(new AuthHeaderFilter.Config())))
+                        .uri("lb://jobapplication-service"))
+
                 // Auth-Service
                 .route("AUTH-MS", predicateSpec -> predicateSpec
                         .path("/auth/***")

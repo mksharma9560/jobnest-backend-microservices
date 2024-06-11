@@ -49,4 +49,17 @@ public class ResponseBuilder {
                 .requestId(UUID.randomUUID().toString())
                 .build();
     }
+
+    public ApiResponse<Integer> buildResponseWithListOfData(
+            Integer recordsInserted, boolean success, String message, HttpStatus status) {
+
+        return ApiResponse.<Integer>builder()
+                .data(recordsInserted)
+                .success(success)
+                .message(message)
+                .status(status)
+                .timeStamp(LocalDateTime.now())
+                .requestId(UUID.randomUUID().toString())
+                .build();
+    }
 }

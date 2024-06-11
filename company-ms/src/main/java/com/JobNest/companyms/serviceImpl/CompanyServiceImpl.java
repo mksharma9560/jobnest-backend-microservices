@@ -219,7 +219,7 @@ public class CompanyServiceImpl implements CompanyService {
     }
 
     public List<CompanyDto> sortCompanies(List<CompanyDto> companyDtos) {
-        companyDtos.sort(Comparator.comparingDouble(CompanyDto::getAverageRating).reversed());
+        companyDtos.sort(Comparator.comparing(CompanyDto::getName).reversed());
         return companyDtos;
     }
 
